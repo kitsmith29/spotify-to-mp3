@@ -2,7 +2,7 @@ import pandas as pd
 from spotify_connect import SpotifyConnector
 from spotify_query import SpotifyQueryHandler
 
-class UserPlaylists():
+class PlaylistTracks():
     
     def __init__(self, spotify_connection):
         self.sp_conn = spotify_connection
@@ -18,6 +18,6 @@ class UserPlaylists():
 if __name__ == "__main__":
     connector = SpotifyConnector()
     sp = connector.connectToSpotify()
-    up = UserPlaylists(sp)
+    up = PlaylistTracks(sp)
     tracks = up.getPlaylistTracks('5o9V8sIoMG5oKlIaUTGTs1')
     print(tracks)
