@@ -12,7 +12,7 @@ class PlaylistTracks():
         track_df = self.sp_query.extractAllQueryResults(self.sp_conn, self.sp_conn.playlist_tracks, playlist_id)
         song_df = self.sp_query.extractTrackNames(track_df)
         artist_df = self.sp_query.extractArtistNames(track_df)
-        song_artist_df = pd.DataFrame({'song': song_df, 'artist': artist_df})
+        song_artist_df = pd.DataFrame({'song': song_df, 'artists': artist_df})
         return(song_artist_df)
     
 if __name__ == "__main__":
