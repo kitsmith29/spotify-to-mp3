@@ -1,5 +1,4 @@
 import pandas as pd
-from spotify_connect import SpotifyConnector
 
 class SpotifyQueryHandler():
     

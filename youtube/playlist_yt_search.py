@@ -1,13 +1,13 @@
 import pandas as pd
-from spotify_connect import SpotifyConnector
-from playlist_tracks import PlaylistTracks
+from spotify import spotify_connect as sc
+from spotify import playlist_tracks as pt
 from youtube_search import YouTubeSearcher
 
 class PlaylistYTSearcher():
     
     def __init__(self):
         
-        connector = SpotifyConnector()
+        connector = sc.SpotifyConnector()
         self.sp = connector.connectToSpotify()
         
     def generateSearchStringDFColumn(self, df):
@@ -29,7 +29,7 @@ class PlaylistYTSearcher():
         
         title_df = pd.DataFrame(columns = ['yt_titles'])
         
-        pl_tr = PlaylistTracks(self.sp)
+        pl_tr = pt.PlaylistTracks(self.sp)
         song_artist_df = pl_tr.getPlaylistTracks(playlist_id).head(n=3)
         yt_search_df = self.generateSearchStringDFColumn(song_artist_df)
         

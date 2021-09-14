@@ -12,6 +12,9 @@ class SpotifyConnector(Spotify):
         
         auth_manager = oauth2.SpotifyClientCredentials(
             client_id=self.client_id,
-            client_secret=self.client_secret)
+            client_secret=self.client_secret
+            )
+        
         sp = Spotify(auth_manager=auth_manager)
+        
         return(sp)
