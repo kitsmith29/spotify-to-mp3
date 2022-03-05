@@ -8,6 +8,7 @@ django = "*"
 pandas = "*"
 spotipy = "*"
 youtube_dl = "*"
+python-decouple = "*"
 
 [dev-packages]
 pytest = "*"
