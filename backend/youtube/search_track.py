@@ -1,4 +1,3 @@
-from requests import get
 import youtube_dl
 
 class YouTubeSearcher():
