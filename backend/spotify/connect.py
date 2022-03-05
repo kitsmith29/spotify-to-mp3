@@ -1,7 +1,6 @@
 from spotipy import oauth2, Spotify
 
 class SpotifyConnector(Spotify):
-    
     def __init__(self):
         super().__init__(Spotify)
         
@@ -9,7 +8,6 @@ class SpotifyConnector(Spotify):
         self.client_secret = '86c216166e494bfaa82fb40b677f8aad'
     
     def connectToSpotify(self):
-        
         auth_manager = oauth2.SpotifyClientCredentials(
             client_id=self.client_id,
             client_secret=self.client_secret
