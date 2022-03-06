@@ -41,3 +41,23 @@ class Playlists(APIView):
         results = sp.current_user_playlists()
 
         return Response(results)
+
+
+class Tracks(APIView):
+    def get(self, request):
+        sp_auth = spotipy.SpotifyOAuth(
+            scope=scope,
+            client_id=CLIENT_ID,
+            client_secret=CLIENT_SECRET,
+            redirect_uri=REDIRECT_URI,
+        )
+
+        code = request.GET.get("code", "")
+        token = sp_auth.get_access_token(code=code)
+        sp = spotipy.Spotify(auth=token["access_token"])
+
+        playlist_id = request.query_params["playlist_id"]
+
+        results = sp.playlist_tracks(playlist_id)
+
+        return Response(results["items"])
