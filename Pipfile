@@ -5,10 +5,11 @@ name = "pypi"
 
 [packages]
 django = "*"
-pandas = "*"
-spotipy = "*"
-youtube_dl = "*"
+djangorestframework = "*"
 python-decouple = "*"
+pandas = "*"
+youtube_dl = "*"
+spotipy = "*"
 
 [dev-packages]
 pytest = "*"
@@ -19,4 +20,5 @@ black = "*"
 python_version = "3.10"
 
 [scripts]
+backend = "python backend/manage.py runserver"
 test = "pytest -vv"
