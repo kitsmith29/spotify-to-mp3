@@ -1,9 +1,9 @@
+import Login from "./components/Login"
+
 function App() {
   return (
     <div>
-      <h>
-        Test app
-      </h>
+      <Login />
     </div>
   );
 }
